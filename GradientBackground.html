@@ -1,0 +1,130 @@
+
+<!-- saved from url=(0036)file:///C:/Users/VIBHUSHITHA/bg.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Gradient Background</title>
+    <link rel="stylesheet" href="file:///C:/Users/VIBHUSHITHA/style.css">
+</head>
+<body id="gradient" style="background: linear-gradient(to right, rgb(193, 64, 247), rgb(163, 221, 236));">
+    <h1>Gradient Background Generator</h1>
+    <div class="color-inputs">
+        <input type="color" class="color1" name="color1" value="#00f7ff">
+        <input type="color" class="color2" name="color2" value="#ff00e6">
+    </div>
+    <h2>Current CSS Background</h2>
+    <h3>linear-gradient(to right, rgb(193, 64, 247), rgb(163, 221, 236));</h3>
+    <button id="randomColor">Select Random Color</button>
+    <script src="file:///C:/Users/VIBHUSHITHA/script.js"></script>
+
+
+
+
+<style>
+    body {
+    font-family: 'Raleway', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: linear-gradient(to right, rgb(255, 0, 179), rgb(0, 251, 255));
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    
+    font-family: 'Raleway', cursive;
+    text-shadow: 2px 2px white;
+    font-weight: 500;
+    font-size: 2em;
+    color: rgba(16, 16, 16, 0.938);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 15%;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 20px;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: none;
+    letter-spacing: 0.01em;
+    margin-top: 10px;
+}
+
+.color-inputs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.color-inputs input {
+    margin: 0 10px;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+<script>
+    // Get elements from the DOM
+const h3 = document.querySelector("h3");
+const color1 = document.querySelector(".color1");
+const color2 = document.querySelector(".color2");
+const body = document.getElementById("gradient");
+const randomColorButton = document.getElementById("randomColor");
+
+// Function to set the gradient background
+function setGradient() {
+    body.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
+    h3.textContent = body.style.background + ";";
+}
+
+// Event listeners for color input changes
+color1.addEventListener("input", setGradient);
+color2.addEventListener("input", setGradient);
+
+// Event listener for the "Select Random Color" button
+randomColorButton.addEventListener("click", () => {
+    const rndColor1 = randomColor();
+    const rndColor2 = randomColor();
+    body.style.background = `linear-gradient(to right, ${rndColor1}, ${rndColor2})`;
+    h3.textContent = body.style.background + ";";
+});
+
+// Function to generate a random color
+function randomColor() {
+    const color = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+    return color;
+}
+
+// Initialize the gradient
+setGradient();
+
+</script></body></html>
