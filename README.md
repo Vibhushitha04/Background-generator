@@ -4,6 +4,9 @@ The Gradient Background Generator is a web-based tool that allows users to effor
 Key Features:
 
 Easy-to-Use Interface: Create gradients with a simple and intuitive interface.
+
 Custom Color Selection: Choose from a wide range of colors and customize gradient stops.
+
 Real-Time Preview: See your gradient design in real-time as you make adjustments.
+
 Export Options: Download your gradient as CSS code or as an image for seamless integration.
